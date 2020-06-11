@@ -1,0 +1,50 @@
+﻿@model BEEUTaller1.Pelicula
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle de la</h2>
+
+<div>
+    <h4>Pelicula</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_lanzamiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_lanzamiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.duracion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.duracion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idpelicula }) |
+    @Html.ActionLink("Regresar a la lista", "Index")
+</p>

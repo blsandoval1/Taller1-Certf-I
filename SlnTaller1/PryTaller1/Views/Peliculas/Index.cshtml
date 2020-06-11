@@ -1,0 +1,53 @@
+﻿@model IEnumerable<BEEUTaller1.Pelicula>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de peliculas</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva pelicula", "Create")
+</p>
+<table class="table table-hover">
+    <thead class="bg-primary">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha_lanzamiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.duracion)
+        </th>
+        <th></th>
+    </tr>
+</thead>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_lanzamiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duracion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idpelicula }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.idpelicula }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idpelicula })
+        </td>
+    </tr>
+}
+
+</table>
